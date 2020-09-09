@@ -1,0 +1,11 @@
+.wrapper {
+    height: 100vh;
+}
+
+.image {
+    background-image: url('../../static/house.jpg');
+    background-size: cover;
+    background-position: -100px;
+    background-repeat: no-repeat;
+    height:80%;
+}
