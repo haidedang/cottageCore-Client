@@ -54,17 +54,6 @@
     height: 200px;
 }
 
-.uploadButton {
-    text-align: center;
-    background-image: url('../../static/add.png');
-    background-size: cover;
-    width: 40px;
-    height: 40px;
-}
-
-.inactive {
-    display: none;
-}
 
 .active{
   border-color: rgb(235, 175, 215);
@@ -100,7 +89,8 @@
 
 .requirements p {
     color: black;
-    
+    font-family: 'avenir';
+    padding-left: 10px;
 }
 
 .wrapperHeading {

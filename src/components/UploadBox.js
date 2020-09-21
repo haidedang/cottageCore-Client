@@ -1,18 +1,18 @@
 import React from 'react';
 import UploadButton from './UploadButton'
 import Button from 'react-bootstrap/Button'
-import LandingPageStyles from '../pages/LandingPage.module.css'
+import UploadBoxStyles from './UploadBox.module.css'
 import { API_URL } from '../config'
 
 class UploadBox extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state= {
-            files:[],
+        this.state = {
+            files: [],
             successfullUploaded: false,
             uploading: false,
-            userId : ''
+            userId: ''
         }
         this.upload = this.upload.bind(this);
 
@@ -22,10 +22,12 @@ class UploadBox extends React.Component {
         this.state.files = this.fileListToArray(window.history.state.files)
         this.sendRequest = this.sendRequest.bind(this);
         this.uploadFiles = this.uploadFiles.bind(this);
-        this.handleChange = this.handleChange.bind(this)
+        this.handleChange = this.handleChange.bind(this);
+        this.delete = this.delete.bind(this);
+        this.calc = this.calc.bind(this);
     }
 
-    handleChange(e){
+    handleChange(e) {
         this.setState({
             userId: e.target.value
         })
@@ -37,18 +39,18 @@ class UploadBox extends React.Component {
         // console.log(typeof(this.state))
         // console.log(window.history.state.files)
         // console.log(typeof(window.history.state.files))
-       
+
         console.log(this.state.files.length)
         const promises = [];
 
         this.state.files.forEach(file => {
             promises.push(this.sendRequest(file));
-          });
-      
+        });
+
         try {
             await Promise.all(promises);
             this.setState({ successfullUploaded: true, uploading: false });
-          } catch (e) {
+        } catch (e) {
             // Not Production ready! Do some error handling here instead...
             this.setState({ successfullUploaded: true, uploading: false });
         }
@@ -57,7 +59,7 @@ class UploadBox extends React.Component {
 
     onFilesAdded(files) {
         this.setState(prevState => ({
-          files: prevState.files.concat(files)
+            files: prevState.files.concat(files)
         }));
     }
 
@@ -65,7 +67,7 @@ class UploadBox extends React.Component {
 
     }
 
-    sendRequest(file){
+    sendRequest(file) {
         return new Promise((resolve, reject) => {
 
             // const req = new XMLHttpRequest();
@@ -76,12 +78,12 @@ class UploadBox extends React.Component {
             // req.send(formData);
 
             fetch(`${API_URL}/image-upload`, {
-                method:'POST',
+                method: 'POST',
                 body: formData
             }).then(res => {
-                console.log(res) 
+                console.log(res)
             })
-            
+
         })
     }
 
@@ -93,21 +95,67 @@ class UploadBox extends React.Component {
         return array;
     }
 
+    delete() {
+
+        this.state.files.pop()
+        console.log(this.state.files)
+        this.setState({
+            ...this.state,
+            files: this.state.files
+        }
+        );
+    }
+
+    calc(length) {
+        return 3- length; 
+    }
+
     render() {
         return (
-            <div>
-                <UploadButton uploadPage={LandingPageStyles.uploadButton} uploadButton ={LandingPageStyles.inactive} onFilesAdded={this.onFilesAdded}/>
-                {this.state.files.map(file => {
-                    return (
-                        <div key={file.name} className="Row">
-                            <span className="Filename">{file.name}</span>
-                            {/* {this.renderProgress(file)} */}
+            <div className = {UploadBoxStyles.container}>
+                <div className={UploadBoxStyles.wrapper}>
+                    <div className={UploadBoxStyles.add}>
+                        {this.state.files.length == 3 && <UploadButton disabled={true} uploadPage={UploadBoxStyles.uploadButton} uploadButton={UploadBoxStyles.inactive} onFilesAdded={this.onFilesAdded} />}
+                        {this.state.files.length != 3 && <UploadButton disabled={false} uploadPage={UploadBoxStyles.uploadButton} uploadButton={UploadBoxStyles.inactive} onFilesAdded={this.onFilesAdded} />}
+                        <div>
+                            <span className={UploadBoxStyles.addFiles}>
+                                Füge weitere Dateien hinzu
+                            </span>
+                            {this.state.files.length == 1 && <span className={UploadBoxStyles.subTitle}>
+                                {this.state.files.length} Datei - {this.calc(this.state.files.length)} verbleibend
+                        </span> } 
+                            {this.state.files.length > 1 && <span className={UploadBoxStyles.subTitle}>
+                                {this.state.files.length} Dateien - {this.calc(this.state.files.length)} verbleibend
+                        </span>}
+                            
                         </div>
-                    );
-                })}
-                <p style={{color: "black"}} >Instagram Username</p>
-                <input  value = {this.state.userId} onChange= {this.handleChange} placeholder="e.x. cottageCore"></input>
+                    </div>
+
+                    {this.state.files.length > 0 &&
+                        this.state.files.map(file => {
+                            return (
+                                <div key={file.name} className={UploadBoxStyles.file}>
+                                    <div className={UploadBoxStyles.fileName}>{file.name}</div>
+                                    <div className={UploadBoxStyles.delete} onClick={this.delete}>
+                                        <svg className={UploadBoxStyles.svg}>
+                                            <path fill="#797C7F" fill-rule="evenodd" d="M7 5.586L4.738 3.324c-.315-.315-.822-.31-1.136.003l-.186.186c-.315.315-.317.824-.004 1.137l2.262 2.262-2.35 2.35c-.315.315-.31.822.003 1.136l.186.186c.315.315.824.317 1.137.004L7 8.238l2.35 2.35c.315.315.822.31 1.137-.004l.186-.186c.314-.314.316-.823.003-1.136l-2.35-2.35 2.262-2.262c.315-.315.31-.822-.004-1.137l-.186-.186c-.314-.314-.823-.316-1.136-.003L7 5.586z">
+
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    {/* {this.renderProgress(file)} */}
+                                </div>
+                            );
+                        })}
+                </div>
+
+                <div className={UploadBoxStyles.wrapper} >
+                    <p style={{ color: "black" }} >Instagram Username</p>
+                    <input value={this.state.userId} onChange={this.handleChange} placeholder="e.x. cottageCore"></input>
+                </div>
+
                 <button onClick={this.upload}>Upload</button>
+
             </div>
         )
     }
