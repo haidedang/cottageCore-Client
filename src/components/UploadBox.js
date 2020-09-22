@@ -19,7 +19,9 @@ class UploadBox extends React.Component {
         // let array = window.history.state.files;
         // this.state = array; 
         this.onFilesAdded = this.onFilesAdded.bind(this);
-        this.state.files = this.fileListToArray(window.history.state.files)
+        if (typeof window !== 'undefined' && window.history.state.files){
+            this.state.files = this.fileListToArray(window.history.state.files)
+        }
         this.sendRequest = this.sendRequest.bind(this);
         this.uploadFiles = this.uploadFiles.bind(this);
         this.handleChange = this.handleChange.bind(this);
