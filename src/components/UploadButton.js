@@ -29,7 +29,6 @@ class UploadButton extends React.Component{
         navigate(this.props.path, {
             state: {files}
         })
-
         // Forward to next page 
     }
 
