@@ -74,10 +74,15 @@ class LandingPage extends React.Component {
                 <Container className={LandingPageStyles.requirements}>
 
 
-                    <div className={LandingPageStyles.wrapperHeading}>
+                    {/* <div className={LandingPageStyles.wrapperHeading}>
                         <div className={LandingPageStyles.requirementsImage}>
                         </div>
+                    </div> */}
+
+                    <div className={LandingPageStyles.requirementsHeading}>
+                         <h2> - Photo Requirements - </h2>
                     </div>
+
                     <Row xs={1}>
                         <Col className={LandingPageStyles.col} >
                             <div className={LandingPageStyles.frameIcon}>
