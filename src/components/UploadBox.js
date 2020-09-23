@@ -20,8 +20,10 @@ class UploadBox extends React.Component {
         // let array = window.history.state.files;
         // this.state = array; 
         this.onFilesAdded = this.onFilesAdded.bind(this);
-        if (typeof window !== 'undefined' && window.history.state.files) {
-            this.state.files = this.fileListToArray(window.history.state.files)
+        if (typeof window !== 'undefined') {
+            if(window.history.state){
+                this.state.files = this.fileListToArray(window.history.state.files)
+            }
         }
         this.sendRequest = this.sendRequest.bind(this);
         this.uploadFiles = this.uploadFiles.bind(this);
@@ -29,6 +31,7 @@ class UploadBox extends React.Component {
         this.delete = this.delete.bind(this);
         this.calc = this.calc.bind(this);
     }
+    
 
     handleChange(e) {
         this.setState({
@@ -161,7 +164,6 @@ class UploadBox extends React.Component {
                                             <div className={UploadBoxStyles.delete} onClick={this.delete}>
                                                 <svg className={UploadBoxStyles.svg}>
                                                     <path fill="#797C7F" fill-rule="evenodd" d="M7 5.586L4.738 3.324c-.315-.315-.822-.31-1.136.003l-.186.186c-.315.315-.317.824-.004 1.137l2.262 2.262-2.35 2.35c-.315.315-.31.822.003 1.136l.186.186c.315.315.824.317 1.137.004L7 8.238l2.35 2.35c.315.315.822.31 1.137-.004l.186-.186c.314-.314.316-.823.003-1.136l-2.35-2.35 2.262-2.262c.315-.315.31-.822-.004-1.137l-.186-.186c-.314-.314-.823-.316-1.136-.003L7 5.586z">
-
                                                     </path>
                                                 </svg>
                                             </div>
