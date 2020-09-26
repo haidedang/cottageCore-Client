@@ -5,10 +5,17 @@
     font-family: 'Caveat';
 }
 
+
 .wrapper h1, h2, p {
     margin: 0;
     color: white;
 }
+
+.wrapper .wrapperIntro {
+    color:black; 
+    text-align:center;
+}
+
 
 .landingText {
     font-family: 'open-sans';
@@ -20,11 +27,21 @@
 }
 
 .image {
-    background-image: url('../../static/house.jpg');
-    background-size: cover;
+    background-image: url('../../static/home.jpg'); 
+
+    /* Set a specific height */
+  height: 500px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+    /* background-size: cover;
     background-position: -100px;
     background-repeat: no-repeat;
-    height:80%;
+    height:80%; */
     position: relative;
 }
 
@@ -51,18 +68,19 @@
 .upload {
     text-align: center;
     background-color:#598851;
+    font-size:50px;
     height: 200px;
 }
 
 
 .active{
-  border-color: rgb(80, 163, 98);
+  border-color: rgb(151, 216, 165);
   color: #fff;
-  box-shadow: 0 0 60px 40px rgb(53, 138, 67) inset, 0 0 0 0 blue;
+  box-shadow: 0 0 60px 40px rgb(125, 175, 136) inset, 0 0 0 0 blue;
   transition: all 150ms ease-in-out;
-  border-radius:5px;
   font-family: 'open-sans';
-}
+  font-size: 25px !important;
+}   
 
 .active.hover {
     box-shadow: 0 0 10px 0 blue inset, 0 0 10px 4px blue;
@@ -91,6 +109,13 @@
     color: black;
     font-family: 'avenir';
     padding-left: 10px;
+}
+
+.requirementWrapper {
+    background-color:pink;
+    width: 100vw;
+  position: relative;
+  left: calc(-50vw + 50%);
 }
 
 .requirementsHeading {
@@ -122,40 +147,30 @@
     margin-top: 30px;
 }
 
+
+
 .frameIcon {
     background-image: url('../../static/frame.png');
+}
+
+.icon{
     background-size: cover;
     height: 58px;
-    min-width: 58px;
-    margin-left:30px;
-    margin-right:5px;
+    width: 58px;
+
+    display:inline-block;
 }
 
 .photoIcon {
     background-image: url('../../static/photo.png');
-    background-size: cover;
-    height: 58px;
-    min-width: 58px;
-    margin-left:30px;
-    margin-right:5px;
 }
 
 .heartIcon {
     background-image: url('../../static/heart.png');
-    background-size: cover;
-    height: 58px;
-    min-width: 58px;
-    margin-left:30px;
-    margin-right:5px;
 }
 
 .calendarIcon {
     background-image: url('../../static/calendar.png');
-    background-size: cover;
-    height: 58px;
-    min-width: 58px;
-    margin-left:30px;
-    margin-right:5px;
 }
 
 .weeklyHeading {
@@ -200,6 +215,19 @@
 
 }
 
+.intro {
+   
+    background: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full%20page/img%20%283%29.jpg")no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+
+
+
 
 @media only screen and (min-width: 450px) {
     .wrapper {
@@ -207,11 +235,49 @@
         font-family: 'Caveat';
     }
 
+    .wrapper .wrapperIntro {
+        font-size:70px;
+    }
+
     .image {
-        background-image: url('../../static/house.jpg');
+        background-image: url('../../static/home.jpg');
         background-size: cover;
         background-position: 0;
         background-repeat: no-repeat;
-        height:80%;
+        box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
+        height:70%;
     }
+
+    .icon{
+        background-size: cover;
+        height: 100px;
+        width: 100px;
+        /* margin-left:30px;
+        margin-right:5px; */
+        display:inline-block;
+    }
+
+    /* .requirementsHeading{
+        padding-bottom:30px;
+    } */
+     .requirementWrapper {
+         background-color:pink;
+            padding-top:40px;
+            padding-bottom:40px;
+            width: 100vw;
+  position: relative;
+  left: calc(-50vw + 50%);
+  margin:auto;
+     }
+
+     .requirementBody {
+
+     }
+
+     .active {
+        margin-top: 20px;
+        margin-bottom:20px;
+        border-radius:7px !important;
+        font-size: 40px !important;
+     }
 }

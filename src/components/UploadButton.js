@@ -31,7 +31,7 @@ class UploadButton extends React.Component{
         })
         // Forward to next page 
     }
-
+    
     fileListToArray(list) {
         const array = [];
         for (var i = 0; i < list.length; i++) {
@@ -51,7 +51,7 @@ class UploadButton extends React.Component{
                     multiple
                     onChange={this.onFilesAdded}
                 />
-                <button variant="primary" className={this.props.uploadButton}>Submit</button>
+                <Button className={this.props.uploadButton}>Upload Photo</Button>
                 <div className={this.props.uploadPage}></div> 
             </div>
         )
