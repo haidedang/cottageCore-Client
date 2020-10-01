@@ -73,6 +73,11 @@ class UploadBox extends React.Component {
     }
 
     onFilesAdded(files) {
+        if(this.state.files.length + files.length > 3){
+            const msg = "Only 3 images can be uploaded."
+            return alert(msg);
+        }
+
         this.setState(prevState => ({
             files: prevState.files.concat(files)
         }));
