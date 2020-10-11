@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button'
-import Notifications, { notify } from 'react-notify-toast'
+// import Notifications, { notify } from 'react-notify-toast'
 import {navigate} from 'gatsby';
 import LandingPageStyles from '../pages/LandingPage.module.css'
 
@@ -24,7 +24,7 @@ class UploadButton extends React.Component{
         this.fileInputRef.current.click();
     }
 
-    toast = notify.createShowQueue()
+    // toast = notify.createShowQueue()
 
     onFilesAdded(evt) {
         if (this.props.disabled) return;
