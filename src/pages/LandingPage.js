@@ -7,7 +7,7 @@ import Carousel from 'react-bootstrap/Carousel'
 import UploadButton from '../components/UploadButton'
 import { MDBContainer } from 'mdbreact';
 import classNames from 'classnames';
-
+import Feed from "../components/Feed"
 
 
 class LandingPage extends React.Component {
@@ -21,10 +21,11 @@ class LandingPage extends React.Component {
                 <div className={LandingPageStyles.image}>
                     <div className={LandingPageStyles.container}>
                         <div>
-                            <h1>Welcome to Cottage Shoutouts</h1>
+                            <h1>Welcome to The Cottage Dream</h1>
+                            <h2>Free Cottage Shoutouts</h2>
                         </div>
                         <div>
-                            <p className={LandingPageStyles.landingText}>Let's build a cottage core community together! Every week we will select five of your submitted pictures and share them on our Instagram Channel</p>
+                            <p className={LandingPageStyles.landingText}>Every week we will select some of your submitted pictures and share them on our Instagram Channel. Let’s build a cottagecore community together!</p>
                         </div>
                     </div>
 
@@ -86,6 +87,8 @@ class LandingPage extends React.Component {
                     </div>
                 </div> */}
 
+
+
                     <div className={[LandingPageStyles.requirementsHeading].join(' ')}>
                         <h2> - Photo Requirements - </h2>
                     </div>
@@ -119,6 +122,15 @@ class LandingPage extends React.Component {
                 </Container>
 
                 <UploadButton uploadButton={LandingPageStyles.active} path='/upload' />
+
+                {/* <Container className={LandingPageStyles.feed}> 
+                <Feed userName="aestheticcottagecore" className="Feed" classNameLoading="Loading"/>
+                </Container> */}
+                
+                <div className={LandingPageStyles.feed}>
+                <Feed userName="aestheticcottagecore" className="Feed" classNameLoading="Loading"/>
+                </div>
+                
 
                 {/* <div onClick={this.openFileDialog}  className={LandingPageStyles.buttonHeading}>
                 <input
