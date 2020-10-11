@@ -1,7 +1,13 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button'
+import Notifications, { notify } from 'react-notify-toast'
 import {navigate} from 'gatsby';
 import LandingPageStyles from '../pages/LandingPage.module.css'
+
+const toastColor = { 
+    background: '#505050', 
+    text: '#fff' 
+  }
 
 class UploadButton extends React.Component{
 
@@ -18,9 +24,33 @@ class UploadButton extends React.Component{
         this.fileInputRef.current.click();
     }
 
+    toast = notify.createShowQueue()
+
     onFilesAdded(evt) {
         if (this.props.disabled) return;
         const files = evt.target.files;
+
+        if (files.length > 3) {
+            const msg = 'Only 3 images can be uploaded at a time'
+            // return this.toast(msg, 'custom', 2000, toastColor)  
+            return alert(msg)
+        }
+
+        const types = ['image/png', 'image/jpeg', 'image/gif']
+
+        for (const file of files) {
+        
+            if (types.every(type => file.type !== type)) {
+              return alert(`'${file.type}' is not a supported format`)
+            }
+      
+            if (file.size > 6000000) {
+              console.log(file.size)
+              return alert(`'${file.name}' is too large, please pick a smaller file`)
+            }
+      
+        }
+
         if (this.props.onFilesAdded) {
             const array = this.fileListToArray(files);
             this.props.onFilesAdded(array);
