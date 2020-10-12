@@ -13,14 +13,16 @@
 }
 
 .image h1, .image h2, .image p {
-    margin: 0;
+    /* margin: 0; */
     color: white;
 }
 
 
 .landingText {
     /* font-family: 'open-sans'; */
-    font-style: italic;
+    /* font-style: italic; */
+    max-width:350px;
+    margin:auto;
 }
 
 .text {
@@ -227,11 +229,27 @@
     background-size: cover;
 }
 
+.about {
+    margin-top:15px;
+    background-color:#709968;
+    height: 400px;
+    display:flex; 
+    justify-content: center;
+}
+
 
 .aboutPicture {
     max-width:100%;
     height:auto;
     border-radius:30px;
+}
+
+.aboutText {
+    max-width: 700px !important;  
+    margin: auto; 
+}
+.aboutText p, .aboutText h1 {
+    color:white;
 }
 
 

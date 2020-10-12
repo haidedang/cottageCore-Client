@@ -21,12 +21,12 @@ class LandingPage extends React.Component {
                 <div className={LandingPageStyles.image}>
                     <div className={LandingPageStyles.container}>
                         <div>
-                            <h1>Welcome to The Cottage Dream</h1>
+                            <h1>Free Cottage Shoutouts</h1>
                             <br></br>
-                            <h2>Free Cottage Shoutouts</h2>
+                            
                         </div>
-                        <div>
-                            <p className={LandingPageStyles.landingText}>Every week we will select some of your submitted pictures and share them on our Instagram Channel. Let’s build a cottagecore community together!</p>
+                        <div >
+                            <p className={LandingPageStyles.landingText}><b>Welcome to the Cottage Dream!</b> Every week we will select some of your submitted pictures and share them on our Instagram Channel. Let’s build a cottagecore community together!</p>
                         </div>
                     </div>
 
@@ -135,11 +135,12 @@ class LandingPage extends React.Component {
                 <div className={LandingPageStyles.about}>
                     <Container className="mt-5">
                     <Row>
-                        <Col className="col-md-6 col-12">
+                        
+                        {/* <Col className="col-md-6 col-12">
                             <img className={LandingPageStyles.aboutPicture} src={require('../../static/readingGirl.jpg')}>
                             </img>
-                        </Col>
-                        <Col className="col-md-6  my-auto">  
+                        </Col> */}
+                        <Col className={[LandingPageStyles.aboutText, "col-md-12 my-auto"].join(' ')}>  
                             <h1 className="mt-3 text-center">About Us</h1>
                             <br></br>
                             <p>The Cottage Dream is a lifestyle movement inspired by the ideas of simplicity, slow travel, sustainability and harmony with nature.
