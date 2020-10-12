@@ -6,24 +6,25 @@
 }
 
 
-.wrapper h1, h2, p {
-    margin: 0;
-    color: white;
-}
 
 .wrapper .wrapperIntro {
     color:black; 
     text-align:center;
 }
 
+.image h1, .image h2, .image p {
+    margin: 0;
+    color: white;
+}
+
 
 .landingText {
-    font-family: 'open-sans';
+    /* font-family: 'open-sans'; */
     font-style: italic;
 }
 
 .text {
-    font-family: 'open-sans';
+    /* font-family: 'open-sans'; */
 }
 
 .image {
@@ -107,7 +108,7 @@
 
 .requirements p {
     color: black;
-    font-family: 'avenir';
+    /* font-family: 'avenir'; */
     padding-left: 10px;
 }
 
@@ -147,7 +148,9 @@
     margin-top: 30px;
 }
 
-
+.about h1, p {
+    color:black;
+}
 
 .frameIcon {
     background-image: url('../../static/frame.png');
@@ -225,8 +228,10 @@
 }
 
 
-.feed {
-   
+.aboutPicture {
+    max-width:100%;
+    height:auto;
+    border-radius:30px;
 }
 
 

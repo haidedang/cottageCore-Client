@@ -11,4 +11,9 @@ html, body {
    font-family: Caveat;
   }
 
+p {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: black;
+}
+
 

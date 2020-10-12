@@ -16,12 +16,13 @@ class LandingPage extends React.Component {
         return (
             <div className={LandingPageStyles.wrapper} >
                 <MDBContainer className={`${LandingPageStyles.introHeader} mt-3 mb-3 mt-lg-5 mb-lg-5`} >
-                        <h1 className= {LandingPageStyles.wrapperIntro}>The Cottage Dream </h1>
+                    <h1 className={LandingPageStyles.wrapperIntro}>The Cottage Dream </h1>
                 </MDBContainer>
                 <div className={LandingPageStyles.image}>
                     <div className={LandingPageStyles.container}>
                         <div>
                             <h1>Welcome to The Cottage Dream</h1>
+                            <br></br>
                             <h2>Free Cottage Shoutouts</h2>
                         </div>
                         <div>
@@ -94,30 +95,30 @@ class LandingPage extends React.Component {
                     </div>
 
                     <div className={[LandingPageStyles.requirementWrapper, "mb-5", "mt-5"].join(' ')}>
-                
-                    <Row xs={1} className={[LandingPageStyles.requirementBody].join(' ')} >
-                        <Col  className="col-md-4 text-center" >
-                            <div className={[LandingPageStyles.frameIcon, LandingPageStyles.icon, "mt-3", "mb-3" ].join(' ')} >
-                            </div>
-                            <p> 9:16 or 4:5 format</p>
-                        </Col>
 
-                        <Col className="col-md-4 text-center">
-                        <div className={[LandingPageStyles.photoIcon, LandingPageStyles.icon, "mt-3", "mb-3"].join(' ')} >
-                            </div>
-                            <p> should be your own picture</p>
-                        </Col>
+                        <Row xs={1} className={[LandingPageStyles.requirementBody].join(' ')} >
+                            <Col className="col-md-4 text-center" >
+                                <div className={[LandingPageStyles.frameIcon, LandingPageStyles.icon, "mt-3", "mb-3"].join(' ')} >
+                                </div>
+                                <p> 9:16 or 4:5 format</p>
+                            </Col>
 
-                        <Col className="col-md-4 text-center" >
-                        <div className={[LandingPageStyles.heartIcon, LandingPageStyles.icon, "mt-3", "mb-3"].join(' ')} >
-                            </div>
-                            <p> not edited and high resolution</p>
-                        </Col>
-                     
-                    </Row>
+                            <Col className="col-md-4 text-center">
+                                <div className={[LandingPageStyles.photoIcon, LandingPageStyles.icon, "mt-3", "mb-3"].join(' ')} >
+                                </div>
+                                <p> should be your own picture</p>
+                            </Col>
+
+                            <Col className="col-md-4 text-center" >
+                                <div className={[LandingPageStyles.heartIcon, LandingPageStyles.icon, "mt-3", "mb-3"].join(' ')} >
+                                </div>
+                                <p> not edited and high resolution</p>
+                            </Col>
+
+                        </Row>
 
                     </div>
-                   
+
 
                 </Container>
 
@@ -126,11 +127,27 @@ class LandingPage extends React.Component {
                 {/* <Container className={LandingPageStyles.feed}> 
                 <Feed userName="aestheticcottagecore" className="Feed" classNameLoading="Loading"/>
                 </Container> */}
-                
+
                 <div className={LandingPageStyles.feed}>
-                <Feed userName="aestheticcottagecore" className="Feed" classNameLoading="Loading"/>
+                    <Feed userName="aestheticcottagecore" className="Feed" classNameLoading="Loading" />
                 </div>
-                
+
+                <div className={LandingPageStyles.about}>
+                    <Container className="mt-5">
+                    <Row>
+                        <Col className="col-md-6 col-12">
+                            <img className={LandingPageStyles.aboutPicture} src={require('../../static/readingGirl.jpg')}>
+                            </img>
+                        </Col>
+                        <Col className="col-md-6  my-auto">  
+                            <h1 className="mt-3 text-center">About Us</h1>
+                            <br></br>
+                            <p>The Cottage Dream is a lifestyle movement inspired by the ideas of simplicity, slow travel, sustainability and harmony with nature.
+                             Our mission is to build an inclusive cottagecore community by offering an aspirational place of soft escapism with a hint of nostalgia to make everyone feel warm, fuzzy and welcomed.</p>
+                        </Col>
+                    </Row>
+                    </Container>
+                </div>
 
                 {/* <div onClick={this.openFileDialog}  className={LandingPageStyles.buttonHeading}>
                 <input
