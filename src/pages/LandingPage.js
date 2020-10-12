@@ -26,7 +26,7 @@ class LandingPage extends React.Component {
                             
                         </div>
                         <div >
-                            <p className={LandingPageStyles.landingText}><b>Welcome to the Cottage Dream!</b> Every week we will select some of your submitted pictures and share them on our Instagram Channel. Let’s build a cottagecore community together!</p>
+                            <p className={LandingPageStyles.landingText}>Welcome to the Cottage Dream! Every week we will select some of your submitted pictures and share them on our Instagram Channel. Let’s build a cottagecore community together!</p>
                         </div>
                     </div>
 
@@ -123,6 +123,10 @@ class LandingPage extends React.Component {
                 </Container>
 
                 <UploadButton uploadButton={LandingPageStyles.active} path='/upload' />
+
+                <div className={[LandingPageStyles.requirementsHeading].join(' ')}>
+                        <h2>  Follow us on Instagram :)</h2>
+                    </div>
 
                 {/* <Container className={LandingPageStyles.feed}> 
                 <Feed userName="aestheticcottagecore" className="Feed" classNameLoading="Loading"/>

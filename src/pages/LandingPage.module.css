@@ -137,7 +137,7 @@
 
 .buttonHeading {
     text-align: center;
-    padding-bottom:60px;
+    /* padding-bottom:60px; */
 }
 
 .requirementsImage {
@@ -245,13 +245,13 @@
 }
 
 .aboutText {
-    max-width: 700px !important;  
+    max-width: 500px !important;  
     margin: auto; 
 }
 .aboutText p, .aboutText h1 {
     color:white;
+    text-align: center;
 }
-
 
 
 @media only screen and (min-width: 450px) {
