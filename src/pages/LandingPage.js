@@ -11,12 +11,12 @@ import Feed from "../components/Feed"
 
 
 class LandingPage extends React.Component {
-
+    // document.getElementById('about').scrollIntoView()
     render() {
         return (
             <div className={LandingPageStyles.wrapper} >
                 <MDBContainer className={`${LandingPageStyles.introHeader} mt-3 mb-3 mt-lg-5 mb-lg-5`} >
-                    <h1 className={LandingPageStyles.wrapperIntro}>The Cottage Dream </h1>
+                <a style={{ "text-decoration": 'none'}}href="#about"><h1  className={LandingPageStyles.wrapperIntro}>The Cottage Dream </h1></a>
                 </MDBContainer>
                 <div className={LandingPageStyles.image}>
                     <div className={LandingPageStyles.container}>
@@ -136,7 +136,7 @@ class LandingPage extends React.Component {
                     <Feed userName="aestheticcottagecore" className="Feed" classNameLoading="Loading" />
                 </div>
 
-                <div className={LandingPageStyles.about}>
+                <div id="about" className={LandingPageStyles.about}>
                     <Container className="mt-5">
                     <Row>
                         

@@ -30,13 +30,12 @@
 }
 
 .image {
-    background-image: url('../../static/home.jpg'); 
+    background-image: url('../../static/home2.jpg'); 
 
     /* Set a specific height */
   height: 500px;
 
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -47,6 +46,7 @@
     height:80%; */
     position: relative;
 }
+
 
 .container {
     position: absolute;
@@ -265,12 +265,18 @@
     }
 
     .image {
-        background-image: url('../../static/home.jpg');
+        background-image: url('../../static/home2.jpg');
         background-size: cover;
         background-position: 0;
         background-repeat: no-repeat;
         box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
         height:70%;
+
+         /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
     }
 
     .icon{
