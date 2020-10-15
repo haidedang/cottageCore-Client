@@ -143,6 +143,7 @@ class UploadBox extends React.Component {
                     </div>
                 default:
                     return <div className={UploadBoxStyles.container}>
+                        <h2 className="mt-1 mb-4" style={{"color":"white" }}>Upload up to 3 pictures</h2>
                         <div className={UploadBoxStyles.wrapper}>
                             <div className={UploadBoxStyles.add}>
                                 {this.state.files.length == 3 && <UploadButton disabled={true} uploadPage={UploadBoxStyles.uploadButton} uploadButton={UploadBoxStyles.inactive} onFilesAdded={this.onFilesAdded} />}
