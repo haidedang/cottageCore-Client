@@ -149,13 +149,13 @@ class UploadBox extends React.Component {
                                 {this.state.files.length != 3 && <UploadButton disabled={false} uploadPage={UploadBoxStyles.uploadButton} uploadButton={UploadBoxStyles.inactive} onFilesAdded={this.onFilesAdded} />}
                                 <div>
                                     <span className={UploadBoxStyles.addFiles}>
-                                        Füge weitere Dateien hinzu
+                                        Add more files
                             </span>
                                     {this.state.files.length == 1 && <span className={UploadBoxStyles.subTitle}>
-                                        {this.state.files.length} Datei - {this.calc(this.state.files.length)} verbleibend
+                                        {this.state.files.length} file - {this.calc(this.state.files.length)} left
                         </span>}
                                     {this.state.files.length > 1 && <span className={UploadBoxStyles.subTitle}>
-                                        {this.state.files.length} Dateien - {this.calc(this.state.files.length)} verbleibend
+                                        {this.state.files.length} files - {this.calc(this.state.files.length)} left
                         </span>}
 
                                 </div>
