@@ -6,7 +6,7 @@ import blogPageStyles from "./blogPage.module.css"
 import Helmet from "react-helmet"
 import useScript from '../utils/useScript'
 
-if(typeof window !== "undefined"){
+/* if(typeof window !== "undefined"){
     window.addEventListener("DOMContentLoaded", handle , true);
 }
 
@@ -19,7 +19,7 @@ function handle(){
         document.body.appendChild(script);
         console.log('script applied');
 }
-
+ */
 class Blog extends React.Component {
 
     state = {
