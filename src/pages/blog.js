@@ -6,8 +6,9 @@ import blogPageStyles from "./blogPage.module.css"
 import Helmet from "react-helmet"
 import useScript from '../utils/useScript'
 
-
-window.addEventListener("DOMContentLoaded", handle , true);
+if(window){
+    window.addEventListener("DOMContentLoaded", handle , true);
+}
 
 function handle(){
     const script = document.createElement("script");
