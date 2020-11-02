@@ -1,10 +1,10 @@
-/**
+/* /**
  * Configure your Gatsby site with this file.
  *
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 
-require("dotenv").config({
+/* require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
@@ -20,7 +20,7 @@ module.exports = {
         // replace `UA-XXXXXXXXX-X` with your own Google Analytics Tracking ID
         trackingId: `UA-180766053-1`,
       }
-    }/* ,
+    },
       "gatsby-plugin-react-helmet",
       {
         resolve: `gatsby-source-filesystem`,
@@ -28,7 +28,7 @@ module.exports = {
           name: `images`,
           path: `${__dirname}/src/images`,
         },
-      }, */,
+      },
       {
         resolve: "gatsby-source-strapi",
         options: {
@@ -56,4 +56,4 @@ module.exports = {
       },
       "gatsby-plugin-offline",
     ],
-  }
+  }  */
