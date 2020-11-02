@@ -20,7 +20,7 @@ module.exports = {
         // replace `UA-XXXXXXXXX-X` with your own Google Analytics Tracking ID
         trackingId: `UA-180766053-1`,
       }
-    },
+    }/* ,
       "gatsby-plugin-react-helmet",
       {
         resolve: `gatsby-source-filesystem`,
@@ -28,7 +28,7 @@ module.exports = {
           name: `images`,
           path: `${__dirname}/src/images`,
         },
-      },
+      }, */,
       {
         resolve: "gatsby-source-strapi",
         options: {
