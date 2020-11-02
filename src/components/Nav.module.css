@@ -1,0 +1,33 @@
+
+#instagramIcon {
+    font-size: 30px;
+  }
+  
+  #titleWrapper {
+    height: 80%;
+  }
+  
+  #hero {
+
+  }
+  
+  #hero-top {
+    height: 100%;
+  }
+
+  #titleHeading {
+    font-size: 60px;
+  }
+  
+
+  
+@media only screen and (min-width: 980px) {
+
+    #home:after {
+        content: '|';
+        font-family: serif;
+        padding-left: .5em;
+        padding-right: .5em;
+    }
+
+}

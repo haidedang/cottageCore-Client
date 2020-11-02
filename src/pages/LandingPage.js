@@ -7,17 +7,18 @@ import Carousel from 'react-bootstrap/Carousel'
 import UploadButton from '../components/UploadButton'
 import { MDBContainer } from 'mdbreact';
 import classNames from 'classnames';
-import Feed from "../components/Feed"
-
+import Feed from "../components/Feed"; 
+import { Link, StaticQuery, graphql } from "gatsby"
+import Navigation from "../components/Nav"
+import Layout from'../components/Layout'; 
 
 class LandingPage extends React.Component {
     // document.getElementById('about').scrollIntoView()
     render() {
         return (
+            <Layout>
             <div className={LandingPageStyles.wrapper} >
-                <MDBContainer className={`${LandingPageStyles.introHeader} mt-3 mb-3 mt-lg-5 mb-lg-5`} >
-                <a style={{ "text-decoration": 'none'}}href="#about"><h1  className={LandingPageStyles.wrapperIntro}>The Cottage Dream </h1></a>
-                </MDBContainer>
+                {/*<Navigation/> */}
                 <div className={LandingPageStyles.image}>
                     <div className={LandingPageStyles.container}>
                         <div>
@@ -167,6 +168,7 @@ class LandingPage extends React.Component {
             </div> */}
 
             </div>
+            </Layout>
         )
 
     }

@@ -4,13 +4,11 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 
-module.exports = {
-    plugins: [
-      
-    ],
-  }
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
-  module.exports = {
+module.exports = {
     siteMetadata: {
       title: "My super blog",
       description: "Gatsby blog with Strapi",
