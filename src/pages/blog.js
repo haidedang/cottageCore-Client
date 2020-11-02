@@ -6,7 +6,7 @@ import blogPageStyles from "./blogPage.module.css"
 import Helmet from "react-helmet"
 import useScript from '../utils/useScript'
 
-if(window != undefined){
+if(typeof window !== "undefined"){
     window.addEventListener("DOMContentLoaded", handle , true);
 }
 
