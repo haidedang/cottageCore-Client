@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import Script from 'react-load-script'
 import blogPageStyles from "./blogPage.module.css"
 import Helmet from "react-helmet"
